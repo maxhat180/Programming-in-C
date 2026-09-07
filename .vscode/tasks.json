@@ -1,0 +1,49 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "C Practice: prepare build folder",
+      "type": "shell",
+      "command": "New-Item",
+      "args": [
+        "-ItemType",
+        "Directory",
+        "-Force",
+        "-Path",
+        "${workspaceFolder}\\build\\c-practice"
+      ],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "C Practice: build active file",
+      "type": "process",
+      "command": "C:/mingw64/mingw64/bin/gcc.exe",
+      "args": [
+        "-std=c17",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-g",
+        "${file}",
+        "-o",
+        "${workspaceFolder}\\build\\c-practice\\${fileBasenameNoExtension}.exe"
+      ],
+      "dependsOn": "C Practice: prepare build folder",
+      "dependsOrder": "sequence",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared",
+        "clear": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}

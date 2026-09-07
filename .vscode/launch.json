@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C Practice: debug active file",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}\\build\\c-practice\\${fileBasenameNoExtension}.exe",
+      "cwd": "${fileDirname}",
+      "stopAtEntry": false,
+      "externalConsole": false,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/mingw64/mingw64/bin/gdb.exe",
+      "preLaunchTask": "C Practice: build active file"
+    }
+  ]
+}
