@@ -31,5 +31,11 @@ static int clamp_sample(int sample, int minimum, int maximum)
     /* Otherwise, return sample unchanged. */
     (void)minimum;
     (void)maximum;
-    return sample;
+    if (sample < minimum) {
+        return minimum;
+    }
+    else if (sample > maximum) {
+        return maximum;
+    }
+    else {return sample;}
 }
